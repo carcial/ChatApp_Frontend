@@ -1,0 +1,395 @@
+/* Main container */
+.dashboard-container {
+    display: flex;
+    height: 100vh;
+    background-color: #f4f7fc;
+}
+
+/* Left-side (chat list) */
+.left-side {
+    display: flex;
+    flex-direction: column;
+    width: 25%;
+    background-color: #fff;
+    padding: 20px;
+    border-right: 2px solid #ccc;
+    height: 100vh;
+    /* Full height */
+}
+
+.text-primary {
+    color: #007bff;
+}
+
+/* Profile Section Styles */
+.profile-section {
+    padding: 15px;
+    border-bottom: 1px solid #ccc;
+    margin-bottom: 20px;
+}
+
+.profile-container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 10px;
+    border-radius: 10px;
+    background-color: #f9f9f9;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.profile-info {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    margin-left: 10px;
+}
+
+.profile-icon {
+    width: 70px;
+    height: 70px;
+    border-radius: 50%;
+    background-color: #007bff;
+    color: #fff;
+}
+
+.profile-info h5 {
+    font-size: 1.2rem;
+    font-weight: 600;
+    margin: 5px 0;
+}
+
+.logout-btn {
+    margin-top: 8px;
+}
+
+.settings-icon {
+    font-size: 1.8rem;
+    cursor: pointer;
+    color: #007bff;
+}
+
+/* Invite Friends Section */
+.invite-friends {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 20px;
+    margin-top: 20px;
+    border: 1px solid #e1e1e1;
+    border-radius: 10px;
+    background-color: #f9f9f9;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    width: 100%;
+}
+
+.invite-text {
+    font-size: 1rem;
+    color: #007bff;
+    font-weight: 500;
+    margin-bottom: 10px;
+}
+
+.search-friends-btn {
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    display: flex;
+    align-items: center;
+    padding: 10px 20px;
+    font-size: 0.95rem;
+    transition: background-color 0.3s ease;
+    margin-bottom: 20px;
+}
+
+.search-friends-btn:hover {
+    background-color: #0056b3;
+}
+
+.search-icon {
+    margin-right: 8px;
+    font-size: 1.2rem;
+}
+
+.invitation-count {
+    background-color: #28a745;
+    color: white;
+    font-weight: bold;
+    padding: 4px 8px;
+    border-radius: 50%;
+    font-size: 0.85rem;
+}
+
+.invite-friends .btn-outline-success {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 0.95rem;
+    padding: 10px 20px;
+    transition: border-color 0.3s ease;
+}
+
+
+
+
+
+h4 {
+    margin-bottom: 20px;
+    font-weight: 600;
+    color: #495057;
+}
+
+/* Friend List Container */
+.friend-list {
+    flex-grow: 1;
+    /* Take up remaining space */
+    overflow-y: auto;
+    /* Enable vertical scrolling */
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    background-color: #f9f9f9;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+/* Style for each friend item */
+.chat-item {
+    padding: 10px;
+    margin-bottom: 5px;
+    display: flex;
+    align-items: center;
+    border-radius: 5px;
+    background-color: white;
+    /* Ensure background is distinct */
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    /* Smooth hover transition */
+}
+
+.chat-item.active {
+    background-color: #e6f0ff;
+    /* Same color as the hover effect */
+    font-weight: bold;
+    /* Optional: make the text bold to emphasize the active item */
+}
+
+/* Hover effect for friend item */
+.chat-item:hover {
+    background-color: #e6f0ff;
+    /* Slightly different color on hover */
+}
+
+/* Default Avatar */
+.default-avatar {
+    width: 35px;
+    height: 35px;
+    background-color: #007bff;
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    font-size: 1.2rem;
+    font-weight: bold;
+}
+
+/* Chat Name (aligned beside the avatar) */
+.chat-name {
+    margin-left: 10px;
+    font-size: 1rem;
+    color: #333;
+}
+
+/* Ensure scrollbar does not occupy much space */
+.friend-list::-webkit-scrollbar {
+    width: 8px;
+}
+
+.friend-list::-webkit-scrollbar-track {
+    background: #f1f1f1;
+    border-radius: 10px;
+}
+
+.friend-list::-webkit-scrollbar-thumb {
+    background: #c0c0c0;
+    border-radius: 10px;
+}
+
+.friend-list::-webkit-scrollbar-thumb:hover {
+    background: #888;
+}
+
+
+/* Right-side (chat window) */
+.right-side {
+    width: 75%;
+    position: relative;
+    height: 100vh;
+    overflow-y: hidden;
+    /* Prevent scroll on the entire right-side */
+}
+
+/* Chat header (fixed at the top of the chat window, limited to right-side) */
+.chatWith_header {
+    display: flex;
+    align-items: center;
+    padding: 15px;
+    background-color: #007bff;
+    color: white;
+    font-size: 1.2rem;
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 60px;
+    z-index: 1000;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+/* Back button (aligned to the left in the chat header) */
+.chatWith_header .mt-3 {
+    font-size: 1.5rem;
+    margin-right: 15px;
+    cursor: pointer;
+}
+
+.chatWith_header .more-btn {
+    font-size: 1.8rem;
+    cursor: pointer;
+}
+
+/* Username in chat header */
+.chatWith_header h3 {
+    flex-grow: 1;
+    text-align: center;
+    font-size: 1.3rem;
+    margin: 0;
+}
+
+/* Scrollable conversation area, takes remaining space between header and footer */
+.chat-window {
+    position: absolute;
+    top: 60px;
+    /* Below the header */
+    bottom: 60px;
+    /* Above the footer */
+    left: 0;
+    right: 0;
+    overflow-y: auto;
+    /* Scrollable conversation */
+    padding: 20px;
+    background-color: #d1e1f8;
+}
+
+/* SendMessage Container with Image Preview */
+.sendMessage_container {
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    padding: 10px;
+    background-color: white;
+    border-top: 1px solid #ccc;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 60px;
+    width: 100%;
+    z-index: 1000;
+    box-shadow: 0 -2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.image-preview-container {
+    position: absolute;
+    top: -21px;
+    left: 0px;
+    display: flex;
+    align-items: center;
+    z-index: 1000;
+}
+
+/* Preview Image */
+.preview-image {
+    max-width: 50px;
+    max-height: 40px;
+    margin-left: 15px;
+    border-radius: 5px;
+}
+
+/* Remove Icon */
+.remove-icon {
+    font-size: 1rem;
+    color: red !important;
+    cursor: pointer;
+    position: absolute;
+    left: -10px;
+    top: -10px;
+    padding: 3px;
+}
+
+.emoji-button {
+    border: none;
+    background-color: transparent;
+    font-size: 1.2rem;
+}
+
+/* Emoji picker styling */
+.emoji-picker {
+    position: absolute;
+    bottom: 75px;
+    right: 20px;
+    z-index: 1000;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    background-color: white;
+    border-radius: 8px;
+    padding: 5px;
+}
+
+
+
+
+/* Input field inside sendMessage_container (rounded like WhatsApp) */
+.sendMessage_container input[type="Text"] {
+    flex-grow: 1;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 30px;
+    margin-right: 10px;
+    outline: none;
+    background-color: #f9f9f9;
+    font-size: 1rem;
+}
+
+/* Icons in sendMessage_container */
+.sendMessage_container svg {
+    font-size: 1.5rem;
+    color: #007bff;
+    cursor: pointer;
+    margin: 0 10px;
+}
+
+
+
+
+@media (max-width: 768px) {
+
+    .left-side {
+        width: 100%;
+        border-right: none;
+    }
+
+    .right-side {
+        display: none;
+        width: 100%;
+    }
+
+    .right-side.show-on-small {
+        display: flex;
+        overflow-y: auto;
+    }
+
+    .left-side.hide-on-small {
+        display: none;
+    }
+}

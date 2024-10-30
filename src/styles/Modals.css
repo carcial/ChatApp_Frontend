@@ -1,0 +1,235 @@
+/* Modal Body Styling */
+.user-list {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    /* Spacing between user cards */
+    padding: 10px;
+}
+
+.user-card {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px;
+    border: 1px solid #dee2e6;
+    /* Light border */
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    /* Subtle shadow for depth */
+    background-color: #f8f9fa;
+    transition: box-shadow 0.3s ease;
+}
+
+.user-card:hover {
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+    /* Elevate shadow on hover */
+}
+
+.user-info {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+.user-name {
+    font-size: 1.25rem;
+    font-weight: 600;
+    margin: 0;
+    color: #343a40;
+}
+
+.user-email {
+    font-size: 0.9rem;
+    color: #6c757d;
+    margin: 0;
+    margin-top: 5px;
+}
+
+.action-buttons .send-invite-btn {
+    padding: 0.5rem 1rem;
+    font-size: 0.9rem;
+    font-weight: 500;
+}
+
+.action-buttons .send-invite-btn:hover {
+    background-color: #0056b3;
+    border-color: #0056b3;
+}
+
+/* No results text */
+span {
+    font-size: 1.2rem;
+    color: #6c757d;
+    font-weight: 500;
+}
+
+
+
+
+/* User list container */
+.user-list {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    padding: 10px;
+    max-height: 300px;
+    overflow-y: auto;
+}
+
+/* User card styling */
+.user-card {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px;
+    border: 1px solid #dee2e6;
+    border-radius: 8px;
+    background-color: #f8f9fa;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    transition: box-shadow 0.3s ease;
+}
+
+.user-card:hover {
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+}
+
+/* User information */
+.user-info {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+.user-name {
+    font-size: 1.2rem;
+    font-weight: 600;
+    color: #343a40;
+    margin: 0;
+}
+
+.user-email {
+    font-size: 0.9rem;
+    color: #6c757d;
+    margin: 5px 0 0;
+}
+
+/* Action buttons */
+.action-buttons {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+/* Friend status */
+.friend-status {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 6px 12px;
+    border-radius: 5px;
+    background-color: #e9f8ec;
+    /* Light green background */
+    color: #28a745;
+    /* Green text */
+    font-weight: 600;
+    font-size: 0.95rem;
+    border: 1px solid #28a745;
+    gap: 5px;
+    transition: all 0.3s ease;
+}
+
+.friend-status .friend-check-icon {
+    font-size: 1.2rem;
+}
+
+
+/* Invited status */
+.invited-status {
+    padding: 6px 12px;
+    border-radius: 5px;
+    background-color: #f8f9fa;
+    /* Light gray background */
+    color: #6c757d;
+    /* Gray text */
+    font-style: italic;
+    font-weight: 500;
+    border: 1px solid #6c757d;
+    font-size: 0.95rem;
+    display: inline-block;
+    transition: all 0.3s ease;
+}
+
+
+
+.waiting-status {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 6px 12px;
+    border-radius: 5px;
+    background-color: #fff3cd;
+    /* Light yellow background */
+    color: #856404;
+    /* Darker yellow text */
+    font-weight: 600;
+    font-size: 0.95rem;
+    border: 1px solid #856404;
+    gap: 5px;
+    transition: all 0.3s ease;
+}
+
+.waiting-status .waiting-icon {
+    font-size: 1.2rem;
+}
+
+
+
+
+
+
+
+
+
+/**-------------------------------------------------------------------------/
+/* Invitation List Container */
+.invitation-list {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    /* Add spacing between invitation cards */
+    margin: 20px 0;
+}
+
+/* Each Invitation Card */
+.invitation-card {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px;
+    background-color: #f8f9fa;
+    border: 1px solid #dee2e6;
+    border-radius: 8px;
+    transition: background-color 0.3s ease;
+}
+
+/* Invitation Card Hover Effect */
+.invitation-card:hover {
+    background-color: #f1f3f5;
+}
+
+/* Invitation Info (User Details) */
+.invitation-info {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+
+
+/* No Invitations Text */
+.no-invitations {
+    font-size: 1.1rem;
+    font-weight: 500;
+    color: #6c757d;
+}
