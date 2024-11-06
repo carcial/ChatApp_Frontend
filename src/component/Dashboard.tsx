@@ -218,6 +218,36 @@ export default function Dashboard() {
                         <Button variant="primary" onClick={() => setSeeRegLog(true)}>
                             Register/Login
                         </Button>
+                        <div className="just-try-section">
+                            <span className="section-title">Just Try</span>
+                            <div className="test-user">
+                                <h6 className="user-title">User 1</h6>
+                                <div className="credentials">
+                                    <div className="credential">
+                                        <label>Email:</label>
+                                        <span>Test1@ts.ts</span>
+                                    </div>
+                                    <div className="credential">
+                                        <label>Password:</label>
+                                        <span>1234</span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div className="test-user">
+                                <h6 className="user-title">User 2</h6>
+                                <div className="credentials">
+                                    <div className="credential">
+                                        <label>Email:</label>
+                                        <span>Test2@ts.ts</span>
+                                    </div>
+                                    <div className="credential">
+                                        <label>Password:</label>
+                                        <span>1234</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
                     </div>
                 ) : (
                     <>

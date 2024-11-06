@@ -5,6 +5,66 @@
     background-color: #f4f7fc;
 }
 
+/* Just Try Section Styling */
+.just-try-section {
+    margin-top: 20px;
+    padding: 15px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    background-color: #f9f9f9;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    width: 100%;
+    max-width: 300px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.section-title {
+    font-size: 1.1rem;
+    color: #007bff;
+    font-weight: bold;
+    margin-bottom: 10px;
+    display: block;
+}
+
+.test-user {
+    margin-top: 15px;
+    padding: 10px;
+    background-color: #fff;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+}
+
+.user-title {
+    font-size: 1rem;
+    color: #495057;
+    font-weight: 600;
+    margin-bottom: 5px;
+}
+
+.credentials {
+    margin-top: 5px;
+}
+
+.credential {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 5px;
+    color: #333;
+}
+
+.credential label {
+    font-weight: 500;
+    color: #007bff;
+}
+
+.credential span {
+    font-weight: normal;
+    color: #495057;
+}
+
+
 /* Left-side (chat list) */
 .left-side {
     display: flex;
