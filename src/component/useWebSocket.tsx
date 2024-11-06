@@ -36,7 +36,7 @@ const useWebSocket = () => {
 
         // Use ws:// instead of SockJS for WebSocket URL
         const stompClient = new Client({
-            brokerURL: "ws://localhost:8080/ws",  // Use native WebSocket
+            brokerURL: `wss://chatappbackend-production-81cf.up.railway.app/ws`,  // Use native WebSocket
             reconnectDelay: 5000, // Attempt to reconnect
             heartbeatIncoming: 4000,
             heartbeatOutgoing: 4000,

@@ -278,8 +278,36 @@ h4 {
     right: 0;
     overflow-y: auto;
     /* Scrollable conversation */
+    scroll-behavior: smooth;
     padding: 20px;
     background-color: #d1e1f8;
+}
+
+/* Scrollbar for Webkit-based browsers (Chrome, Safari, Edge) */
+.chat-window::-webkit-scrollbar {
+    width: 8px;
+}
+
+.chat-window::-webkit-scrollbar-track {
+    background: #e0e0e0;
+    border-radius: 8px;
+}
+
+.chat-window::-webkit-scrollbar-thumb {
+    background-color: #7c8590;
+    border-radius: 8px;
+    border: 2px solid #e0e0e0;
+}
+
+.chat-window::-webkit-scrollbar-thumb:hover {
+    background-color: #83aedd;
+}
+
+@-moz-document url-prefix() {
+    .chat-window {
+        scrollbar-width: thin;
+        scrollbar-color: #8e959c #e0e0e0;
+    }
 }
 
 /* SendMessage Container with Image Preview */
@@ -346,7 +374,10 @@ h4 {
     padding: 5px;
 }
 
-
+.emoji-button,
+.chat-message {
+    font-family: 'Segoe UI Emoji', 'Apple Color Emoji', sans-serif;
+}
 
 
 /* Input field inside sendMessage_container (rounded like WhatsApp) */

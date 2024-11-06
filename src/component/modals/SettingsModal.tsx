@@ -57,6 +57,7 @@ export default function SettingsModal({ logOut }: { logOut: () => void }) {
             </Modal.Header>
             <Modal.Body className="p-4">
                 {/* Profile Section */}
+
                 <div className="profile-container d-block d-md-flex align-items-center justify-content-between mb-4 p-3 bg-light rounded shadow-sm">
                     <div className="d-flex align-items-center">
                         <CgProfile className="profile-icon me-3" />
@@ -71,6 +72,7 @@ export default function SettingsModal({ logOut }: { logOut: () => void }) {
                 </div>
 
                 {/* Form Section */}
+                <h3 className="text-center">Account details</h3>
                 <Form onSubmit={handleSubmit(onSubmit)} className="settings-form">
                     <Row>
                         <Col md={6}>

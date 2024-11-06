@@ -27,8 +27,6 @@ export default function SearchModal() {
 
 
 
-
-
     const handleOnChange = (event: React.ChangeEvent<HTMLInputElement>) => {
         setSearchValue(event.target.value)
     }

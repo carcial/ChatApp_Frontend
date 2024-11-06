@@ -1,7 +1,7 @@
 import { useEffect, useState, useRef } from "react";
 import { RootState } from "../states/Store";
 import { useSelector } from "react-redux";
-import { getConversation } from "./API";
+import { API_URL, getConversation } from "./API";
 import { ListGroup } from "react-bootstrap";
 
 // Types
@@ -73,7 +73,7 @@ export default function Conversations({ realTimeMessages }: ConversationsProps) 
 
     const fetchImage = async (chatImageId: number) => {
         try {
-            const response = await fetch(`http://localhost:8080/api/v1/user/getAnImage/${chatImageId}`);
+            const response = await fetch(`${API_URL}/api/v1/user/getAnImage/${chatImageId}`);
             if (response.ok) {
                 const blob = await response.blob();
                 const imageUrl = URL.createObjectURL(blob);
