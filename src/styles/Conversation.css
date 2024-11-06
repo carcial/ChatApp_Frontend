@@ -6,11 +6,20 @@
     font-size: 1rem;
     border-radius: 20px;
     word-wrap: break-word;
+    word-spacing: 0;
+    white-space: pre-wrap;
+    /* Preserve spaces as they are */
+    overflow-wrap: break-word;
     display: flex;
     flex-direction: column;
-    word-spacing: normal;
-    /* Ensure words are close together */
-    line-height: 1.4;
+}
+
+/* Adjust letter spacing for a more compact look */
+.chat-message .message-content {
+    letter-spacing: normal;
+    /* Ensures letters are closer together */
+    font-size: 1rem;
+    /* Ensures consistency in font size */
 }
 
 /* Left-side message (received) */

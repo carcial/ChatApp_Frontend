@@ -98,14 +98,14 @@ export default function Conversations({ realTimeMessages }: ConversationsProps) 
     // Merge the conversation history with filtered real-time messages
     const allMessages = [
         ...chatList.map(chat => ({
-            message: chat.messages.message,
+            message: chat.messages.message.trim(),
             sendingTime: chat.messages.sendingTime,
             senderId: chat.sender.id,
             messageId: chat.messages.messageId,
             imageId: chat.messages.imageId
         })),
         ...filteredRealTimeMessages.map(msg => ({
-            message: msg.message,
+            message: msg.message.trim(),
             sendingTime: msg.sendingTime,
             senderId: msg.senderId,
             messageId: msg.messageId,
