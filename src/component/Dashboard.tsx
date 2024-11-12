@@ -95,7 +95,7 @@ export default function Dashboard() {
             }
             if (inputRef.current && !inputRef.current.contains(event.target as Node)) {
                 // When clicking outside, blur the input to hide the keyboard
-                inputRef.current?.blur();
+                inputRef.current.blur();
             }
         };
 
@@ -109,12 +109,19 @@ export default function Dashboard() {
     }, []);
 
 
-    const onInputFocus = () => {
-        // Ensure keyboard stays visible when input is focused (for mobile devices)
-        if (inputRef.current) {
-            inputRef.current.focus();
-        }
-    };
+    useEffect(() => {
+        // Prevent the entire page from scrolling on mobile by focusing the input again
+        const handleFocus = () => {
+            if (inputRef.current) {
+                inputRef.current.focus();
+            }
+        };
+
+        window.addEventListener('focus', handleFocus);
+        return () => {
+            window.removeEventListener('focus', handleFocus);
+        };
+    }, []);
 
 
     const removeImage = () => {
@@ -374,7 +381,6 @@ export default function Dashboard() {
                                 placeholder="Write a message..."
                                 value={inputValue}
                                 onChange={getInputValue}
-                                onFocus={onInputFocus}
                             />
                             <IoIosSend className="send-icon" onClick={sendMessageToFriend} />
                         </div>
