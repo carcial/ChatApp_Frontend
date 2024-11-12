@@ -44,14 +44,9 @@ export default function Dashboard() {
     const [showEmojiPicker, setShowEmojiPicker] = useState(false);
     const dispatch: AppDispatch = useDispatch();
     const emojiPickerRef = useRef<HTMLDivElement | null>(null);
-    const inputRef = useRef<HTMLInputElement | null>(null);
 
 
 
-    // Focus the input when the user clicks on it (already happening naturally)
-    const focusInput = () => {
-        inputRef.current?.focus();
-    };
 
 
     const AllFriends = myFriends.filter(
@@ -93,10 +88,7 @@ export default function Dashboard() {
             if (emojiPickerRef.current && !emojiPickerRef.current.contains(event.target)) {
                 setShowEmojiPicker(false);
             }
-            if (inputRef.current && !inputRef.current.contains(event.target as Node)) {
-                // When clicking outside, blur the input to hide the keyboard
-                inputRef.current.blur();
-            }
+
         };
 
         // Attach the event listener
@@ -108,20 +100,6 @@ export default function Dashboard() {
         };
     }, []);
 
-
-    useEffect(() => {
-        // Prevent the entire page from scrolling on mobile by focusing the input again
-        const handleFocus = () => {
-            if (inputRef.current) {
-                inputRef.current.focus();
-            }
-        };
-
-        window.addEventListener('focus', handleFocus);
-        return () => {
-            window.removeEventListener('focus', handleFocus);
-        };
-    }, []);
 
 
     const removeImage = () => {
@@ -165,7 +143,7 @@ export default function Dashboard() {
 
 
             setInputValue(""); // Clear input after sending
-            setTimeout(() => focusInput(), 100)
+
             setSelectedFile(null)
 
 
@@ -377,7 +355,7 @@ export default function Dashboard() {
                             </div>
                             <input
                                 type="text"
-                                ref={inputRef}
+
                                 placeholder="Write a message..."
                                 value={inputValue}
                                 onChange={getInputValue}
