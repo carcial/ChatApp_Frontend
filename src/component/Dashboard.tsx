@@ -109,6 +109,12 @@ export default function Dashboard() {
     }, []);
 
 
+    const onInputFocus = () => {
+        // Ensure keyboard stays visible when input is focused (for mobile devices)
+        if (inputRef.current) {
+            inputRef.current.focus();
+        }
+    };
 
 
     const removeImage = () => {
@@ -150,8 +156,9 @@ export default function Dashboard() {
                 console.error("WebSocket not connected, but message sent via API.");
             }
 
-            focusInput()
+
             setInputValue(""); // Clear input after sending
+            setTimeout(() => focusInput(), 100)
             setSelectedFile(null)
 
 
@@ -367,6 +374,7 @@ export default function Dashboard() {
                                 placeholder="Write a message..."
                                 value={inputValue}
                                 onChange={getInputValue}
+                                onFocus={onInputFocus}
                             />
                             <IoIosSend className="send-icon" onClick={sendMessageToFriend} />
                         </div>
