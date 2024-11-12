@@ -44,6 +44,14 @@ export default function Dashboard() {
     const [showEmojiPicker, setShowEmojiPicker] = useState(false);
     const dispatch: AppDispatch = useDispatch();
     const emojiPickerRef = useRef<HTMLDivElement | null>(null);
+    const inputRef = useRef<HTMLInputElement | null>(null);
+
+
+
+    // Focus the input when the user clicks on it (already happening naturally)
+    const focusInput = () => {
+        inputRef.current?.focus();
+    };
 
 
     const AllFriends = myFriends.filter(
@@ -84,6 +92,10 @@ export default function Dashboard() {
         const handleClickOutside = (event: { target: any; }) => {
             if (emojiPickerRef.current && !emojiPickerRef.current.contains(event.target)) {
                 setShowEmojiPicker(false);
+            }
+            if (inputRef.current && !inputRef.current.contains(event.target as Node)) {
+                // When clicking outside, blur the input to hide the keyboard
+                inputRef.current?.blur();
             }
         };
 
@@ -138,6 +150,7 @@ export default function Dashboard() {
                 console.error("WebSocket not connected, but message sent via API.");
             }
 
+            focusInput()
             setInputValue(""); // Clear input after sending
             setSelectedFile(null)
 
@@ -350,6 +363,7 @@ export default function Dashboard() {
                             </div>
                             <input
                                 type="text"
+                                ref={inputRef}
                                 placeholder="Write a message..."
                                 value={inputValue}
                                 onChange={getInputValue}
